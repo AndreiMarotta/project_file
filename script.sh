@@ -32,4 +32,5 @@ function ansible() {
 prepare_bastion
 create_instance
 replace_ip
+sleep 30
 ansible
