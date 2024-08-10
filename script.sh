@@ -24,7 +24,12 @@ function replace_ip() {
     sed -i "s/ansible_host=[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}/ansible_host=$IP/" ../ansible/hosts
 }
 
+function ansible() {
+    cd ../ansible
+    ansible-playbook main.yml
+}
 
 prepare_bastion
 create_instance
 replace_ip
+ansible
